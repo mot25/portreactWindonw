@@ -24,6 +24,7 @@ export default function Main() {
     }
   }, []);
   const fetchGoods = () => {
+    // 00c86206-084fb338-98170e6a-5c170821
     fetch(API_URL, {
       headers: {
         Authorization: API_KEY,
