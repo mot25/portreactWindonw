@@ -1,32 +1,21 @@
 import React, { useEffect, useState, useContext } from "react";
-import { ContextProvider, Context} from "../Context.js";
 import { API_KEY, API_URL } from "../config.js";
 import "./Main.css";
 import Prelodaer from "./Prelodaer";
 import GoodsItems from "./GoodsItems";
 import Cart from './Cart'
 import BasketList from "./BasketList"
+import { Context } from "../Context.js";
 
 
 export default function Main() {
-  const [goods, setGoods] = useState([]);
-  const [isLooding, setisLooding] = useState(true);
-  const [order, setorder] = useState([]);
-  // const [isBasketShow, setisBasketShow] = useState(false);
+  // const [order, setorder] = useState([]);
+  const { isBasketShow, setisLooding, saveOrder,setorder, isLooding, addGoods, order, goods } = useContext(Context)
+  console.log('order', order)
 
-  // const hadleBasketShow = () => {
-  //   setisBasketShow(!isBasketShow)
-  // }
-const value = useContext(Context)
-  console.log('value', value)
-  // const {isBasketShow} = useContext(Context)
-  // console.log('isBasketShow', isBasketShow)
 
   useEffect(() => {
-    console.log('edit order');
-    if (order.length) {
-      localStorage.setItem('order', JSON.stringify(order))
-    }
+    saveOrder()
   }, [order]);
   useEffect(() => {
     fetchGoods();
@@ -42,23 +31,17 @@ const value = useContext(Context)
     })
       .then((res) => res.json())
       .then((data) => {
-        setGoods(data.items);
+        addGoods(data.items);
         setisLooding(false);
       });
   };
   return (
     <div className="main">
-      <ContextProvider>
-        {/* {isBasketShow ? <BasketList list={order} /> : null} */}
-        <Cart quantity={order.length === 0 ? '0' : order.length} />
-        <div className="wrapper">
-          {isLooding ? <Prelodaer /> : <GoodsItems propsGoods={goods} />}
-        </div>
-      </ContextProvider>
+      {isBasketShow ? <BasketList /> : null}
+      <Cart quantity={order.length === 0 ? '0' : order.length} />
+      <div className="wrapper">
+        {isLooding ? <Prelodaer /> : <GoodsItems />}
+      </div>
     </div>
   );
 }
-
-// < Context.Provider value={{
-//   order, setorder
-// }} >

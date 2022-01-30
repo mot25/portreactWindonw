@@ -12,7 +12,7 @@ const initState = {
     isBasketShow: false
 }
 
-export const ContextProvider = ({ children }) => {
+export const ShopProvider = ({ children }) => {
     const [value, dispatch] = useReducer(reducer, initState)
     console.log('value', value)
     value.isBasketShowFun = () => {
@@ -20,6 +20,18 @@ export const ContextProvider = ({ children }) => {
     }
     value.removeorder = (id) => {
         dispatch({ type: 'REMOVE_ORDER', payload: { id } })
+    }
+    value.saveOrder = () => {
+        dispatch({ type: 'SAVE_ORDER'})
+    }
+    value.addGoods = (data) => {
+        dispatch({ type: 'ADD_GOODS', payload: { data } })
+    }
+    value.setorder = (data) => {
+        dispatch({ type: 'SET_ORDER', payload: { data } })
+    }
+    value.setisLooding = (data) => {
+        dispatch({ type: 'SET_LOADING', payload: { data } })
     }
     return <Context.Provider value={value}>
         {children}
