@@ -1,0 +1,84 @@
+.main {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 1550;
+}
+
+.card {
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-image {
+  flex-grow: 1;
+}
+
+.card-action {
+  display: flex;
+  justify-content: space-around;
+}
+
+.buy_card {
+  font-size: 20px;
+}
+
+.wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.card-stacked {
+  text-align: center;
+}
+
+.card_description {
+  font-size: 20px;
+}
+
+.cart {
+  position: fixed;
+  bottom: 4px ;
+  right: 50px;
+  padding: 10px;
+  z-index: 5;
+  width: 66px;
+  cursor: pointer;
+}
+
+
+.icon_cart {
+
+  width: 51px;
+    height: 49px;
+  position: relative;
+}
+.cart_quantity {
+  position: absolute;
+  bottom: 11px;
+  right: 17px;
+  color: #fff;
+  font-size: 23px;
+}
+@media (max-width: 768px) {
+  .cart {
+    bottom: unset;
+    top: 25;
+    right: 25px;
+  }
+}
+
+.counter_edit {
+  cursor: pointer;
+}
+
+.deck{
+  color: red;
+  font-size: 25px;
+}
+
+.inc{
+  color: green;
+  font-size: 25px;
+}
