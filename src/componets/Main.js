@@ -25,9 +25,9 @@ export default function Main() {
   }, []);
   const fetchGoods = () => {
     // 00c86206-084fb338-98170e6a-5c170821
-    fetch(API_URL, {
+    fetch('https://fortniteapi.io/v2/items/upcoming?lang=en', {
       headers: {
-        Authorization: API_KEY,
+        Authorization: '00c86206-084fb338-98170e6a-5c170821',
       },
     })
       .then((res) => res.json())
