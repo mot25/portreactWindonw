@@ -1,13 +1,13 @@
 {
   "files": {
     "main.css": "/portreactWindonw/static/css/main.6de3c638.css",
-    "main.js": "/portreactWindonw/static/js/main.bd70f4c5.js",
+    "main.js": "/portreactWindonw/static/js/main.91c26592.js",
     "index.html": "/portreactWindonw/index.html",
     "main.6de3c638.css.map": "/portreactWindonw/static/css/main.6de3c638.css.map",
-    "main.bd70f4c5.js.map": "/portreactWindonw/static/js/main.bd70f4c5.js.map"
+    "main.91c26592.js.map": "/portreactWindonw/static/js/main.91c26592.js.map"
   },
   "entrypoints": [
     "static/css/main.6de3c638.css",
-    "static/js/main.bd70f4c5.js"
+    "static/js/main.91c26592.js"
   ]
 }
